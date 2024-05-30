@@ -1,40 +1,40 @@
 option "title" "给老婆们氪的金"
 option "operating_currency" "CNY"
 
-2020-09-27 open Equity:OpenBalance CNY,YS,ITEM ;无限造币银行，平账用
+2020-09-27 open Equity:OpenBalance CNY,PRIMOGEM,ITEM ;无限造币银行，平账用
 2020-01-01 open Assets:Alipay CNY ;真实世界的支付宝，此项目中永远是负数
-2020-09-27 open Assets:Waifudebt:Primogem YS ;设为开服前夜开设原石账户，设为开服前夜是防止开服当日的账花掉
+2020-09-27 open Assets:Waifudebt:Primogem PRIMOGEM ;设为开服前夜开设原石账户，设为开服前夜是防止开服当日的账花掉
 2020-09-27 open Assets:Waifudebt:Gacha:QiQi ITEM ;抽到了多少个此类Item
 2020-09-27 open Assets:Waifudebt:Gacha:Klee ITEM ;自动开设角色、武器的Item为单位的账户，抽到多少就是该账户存入几个Item
 2020-09-27 open Expenses:Kejin CNY ;统计总共氪金真实货币多少
-2020-09-27 open Expenses:Waifudebt:Gacha:QiQi YS ;程序自动创建所有角色的氪金账户，计算氪给谁多少
-2020-09-27 open Expenses:Waifudebt:Gacha:Klee YS ;看看你氪给流萤的有没有20000星琼啊？
+2020-09-27 open Expenses:Waifudebt:Gacha:QiQi PRIMOGEM ;程序自动创建所有角色的氪金账户，计算氪给谁多少
+2020-09-27 open Expenses:Waifudebt:Gacha:Klee PRIMOGEM ;看看你氪给流萤的有没有20000星琼啊？
 
 ;此处务必每次导出bean文件根据(总获取=抽*160+剩余)更新，并非真实总获取原石数目
 ;包含氪金获得的和游戏内获得的所有原石，和发的粉球蓝球折算的160
 ;但无法统计浪费在地脉的（即未用于抽卡的原石）
 2020-09-27 ! "保守的总获取原石数目" "系统下发原石" 
-    Equity:OpenBalance                     -28000.00 YS
-    Assets:Waifudebt:Primogem                         28000.00 YS
+    Equity:OpenBalance                     -28000.00 PRIMOGEM
+    Assets:Waifudebt:Primogem                         28000.00 PRIMOGEM
 
 2020-11-11 * "米哈游天命有限公司" "氪金648，可莉"
     Expenses:Kejin                            648.00 CNY
     Assets:Alipay                            -648.00 CNY
 
 2020-11-13 * "新手祈愿" "祈愿50次出七七"
-    Assets:Waifudebt:Primogem                         -8000.00 YS
-    Expenses:Waifudebt:Gacha:QiQi                      8000.00 YS
+    Assets:Waifudebt:Primogem                         -8000.00 PRIMOGEM
+    Expenses:Waifudebt:Gacha:QiQi                      8000.00 PRIMOGEM
 
 2020-11-13 * "出货" "获得七七（包含可能溢出的）"
     Equity:OpenBalance                         -1.00 ITEM
     Assets:Waifudebt:Gacha:QiQi                           1.00 ITEM
 
 2020-11-14 * "常驻祈愿" "祈愿70次出可莉"
-    Assets:Waifudebt:Primogem                        -11200.00 YS
-    Expenses:Waifudebt:Gacha:Klee                     11200.00 YS
+    Assets:Waifudebt:Primogem                        -11200.00 PRIMOGEM
+    Expenses:Waifudebt:Gacha:Klee                     11200.00 PRIMOGEM
 
 2020-11-14 * "出货" "获得可莉（包含可能溢出的）"
     Equity:OpenBalance                        -1.00 ITEM
     Assets:Waifudebt:Gacha:Klee                          1.00 ITEM
 
-2023-04-25 balance Assets:Waifudebt:Primogem  810.00 YS
+2023-04-25 balance Assets:Waifudebt:Primogem  810.00 PRIMOGEM
